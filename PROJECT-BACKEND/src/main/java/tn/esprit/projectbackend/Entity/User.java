@@ -25,13 +25,16 @@ public class User {
 
 
 
-   @ManyToMany(cascade = CascadeType.ALL)
-   private Set<Portfolio> portfolios;
+
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="users")
     private Set<Project> projects;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="users")
+    private Set<PortfolioInvestment> portfolioInvestments;
     @OneToMany(cascade = CascadeType.ALL, mappedBy="usersBank")
     private Set<BankAccount> bankAccounts;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="users")
+    private Set<ProjectInvestment> projectInvestments;
 
 
 
