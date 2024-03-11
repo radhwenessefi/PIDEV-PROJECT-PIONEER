@@ -61,3 +61,7 @@ JPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Entity/Setings.java,8\6
 VPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Entity/PortfolioInvestment.java,4\5\45f7e2725aa3e1fc83d4741874e0a84a94655a5d
 „
 TPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Entity/ProjectInvestment.java,6\7\671ad0b94815dc9ae79700b6377e02599ec69adf
+ƒ
+SPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Configuration/AppConfig.java,b\f\bf75e3f6ec50e1dafa91ea813ac7c2e365591eb2
+„
+TPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Service/ServiceClassTest.java,d\a\daa92fc030670de703e4ec1db9f0c12a13930a3f
