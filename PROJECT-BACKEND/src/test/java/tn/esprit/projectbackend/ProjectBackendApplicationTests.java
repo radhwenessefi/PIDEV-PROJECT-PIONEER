@@ -6,9 +6,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class ProjectBackendApplicationTests {
-	private PortfolioServiceImp yourServiceClass ;
-	@Autowired
-	IPortfolioService portfolioService;
+//	private PortfolioServiceImp yourServiceClass ;
+//	@Autowired
+//	IPortfolioService portfolioService;
 
 //	@Test
 //	public void testFetchDataFromApi() {
