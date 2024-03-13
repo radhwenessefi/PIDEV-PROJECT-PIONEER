@@ -63,3 +63,5 @@ VPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Entity/PortfolioInvestme
 TPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Entity/ProjectInvestment.java,6\7\671ad0b94815dc9ae79700b6377e02599ec69adf
 É
 SPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Configuration/AppConfig.java,b\f\bf75e3f6ec50e1dafa91ea813ac7c2e365591eb2
+ç
+]PROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Controller/PortfolioResController.java,a\7\a7f2bee70beb880b8448fbe4a2296cd6b021e10b

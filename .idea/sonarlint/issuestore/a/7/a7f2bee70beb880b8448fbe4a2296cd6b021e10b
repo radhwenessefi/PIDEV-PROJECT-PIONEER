@@ -1,0 +1,14 @@
+
+‹
+java:S1488"iImmediately return this expression instead of assigning it to the temporary variable "listAllPortfolios".(¿¼ñóüÿÿÿÿ8 ºìÂã1
+ƒ
+java:S1488"aImmediately return this expression instead of assigning it to the temporary variable "portfolio".(Ì²ŠŞøÿÿÿÿ8 ºìÂã1
+~
+java:S1488 "aImmediately return this expression instead of assigning it to the temporary variable "portfolio".(â¸8 ºìÂã1
+~
+java:S1488)"aImmediately return this expression instead of assigning it to the temporary variable "portfolio".(ñø¶Š8 ºìÂã1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(åİ‰½şÿÿÿÿ8¡ºìÂã1
+@
+java:S1128	"Remove this duplicated import.(¶¯ø¦úÿÿÿÿ8’àìÂã1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ÒºìÂã1

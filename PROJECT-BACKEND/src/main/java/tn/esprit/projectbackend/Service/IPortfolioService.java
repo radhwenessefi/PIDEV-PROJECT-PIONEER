@@ -11,4 +11,5 @@ public interface IPortfolioService {
     public Portfolio addPortfolio(Portfolio b);
     public void removePortfolio(Long portfolioId);
     public  Portfolio modifyPortfolio(Portfolio portfolio);
+    public List<Portfolio> fetchDataFromApi();
 }
