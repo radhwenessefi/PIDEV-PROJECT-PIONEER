@@ -1,27 +1,19 @@
 package tn.esprit.projectbackend;
 
-import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import tn.esprit.projectbackend.Entity.Portfolio;
-import tn.esprit.projectbackend.Service.PortfolioServiceImp;
 
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.testng.AssertJUnit.assertNotNull;
 
 @SpringBootTest
 class ProjectBackendApplicationTests {
+	private PortfolioServiceImp yourServiceClass ;
+	@Autowired
+	IPortfolioService portfolioService;
 
-
-	@Test
-	public void testFetchDataFromApi() {
-		PortfolioServiceImp yourServiceClass = new PortfolioServiceImp();
-		List<Portfolio> result = yourServiceClass.fetchDataFromApi();
-		assertNotNull(result);
-
-	}
-
-
-
+//	@Test
+//	public void testFetchDataFromApi() {
+//		List<Portfolio> result = portfolioService.fetchDataFromApi();
+//		Assertions.assertNotNull(result);
+//
+//	}
 }

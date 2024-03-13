@@ -1,16 +1,20 @@
 package tn.esprit.projectbackend.Controller;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.projectbackend.Entity.Portfolio;
-import tn.esprit.projectbackend.Service.IPortfolioService;
 
 import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@NoArgsConstructor
+@Slf4j
 @RequestMapping("/portfolio")
 public class PorfolioResController {
+
     IPortfolioService portfolioService;
     @GetMapping("/get-all-portfolios")
     public List<Portfolio> getAllPortfolio(){
@@ -36,4 +40,13 @@ public class PorfolioResController {
         Portfolio portfolio = portfolioService.modifyPortfolio(b);
         return portfolio ;
     }
+//    @PostMapping("/add-portfolios-from-api")
+//    public ResponseEntity<String> addPortfoliosFromApi(){
+//        List<Portfolio> portfolioListFromApi = portfolioService.fetchDataFromApi();
+//        log.info("the list of portfolios is here ",portfolioListFromApi);
+//        for (Portfolio portfolio : portfolioListFromApi){
+//            portfolioService.addPortfolio(portfolio);
+//        }
+//        return ResponseEntity.ok("Portfolios added From API to the data base");
+//    }
 }
