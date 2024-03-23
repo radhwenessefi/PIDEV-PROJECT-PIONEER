@@ -48,9 +48,9 @@ class PredictVolumes:
 
     def evaluateModel(self, y_hat):
         return accuracy_score(self.y_test, y_hat)
-    #def saveModel(self):
+    def saveModel(self):
         
-        #self.model.save("preModel.h5")  # or "preModel.keras"
+        self.model.save("preModel.h5")  # or "preModel.keras"
 
 
 # Example usage:
@@ -60,5 +60,5 @@ predictor.importData()
 predictor.compileModel()
 y_hat = predictor.fitPredictModel()
 accuracy = predictor.evaluateModel(y_hat)
-#predictor.saveModel()
+predictor.saveModel()
 print("Accuracy:", accuracy)
