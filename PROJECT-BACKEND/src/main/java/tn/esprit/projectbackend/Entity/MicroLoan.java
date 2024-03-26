@@ -27,6 +27,7 @@ public class MicroLoan {
     String repaymentPeriod;
     @OneToOne
     LoanTerm loanTerms;
+
     @ManyToOne
     BankAccount bankaccounts;
 

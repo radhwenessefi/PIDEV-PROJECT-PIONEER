@@ -1,5 +1,6 @@
 package tn.esprit.projectbackend.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,6 +22,7 @@ public class PortfolioInvestment {
 
     @ManyToOne
     User usersportfolio;
+
     @ManyToOne
     Portfolio portfolios ;
 }

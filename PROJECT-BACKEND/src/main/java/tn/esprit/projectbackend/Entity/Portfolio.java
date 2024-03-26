@@ -38,6 +38,7 @@ public class Portfolio {
     @JsonProperty("Cluster_Labels")
     int clusterLabels;
     @OneToMany(cascade = CascadeType.ALL, mappedBy="portfolios")
+    @JsonIgnore
     private Set<PortfolioInvestment> portfolioInvestments;
 
 }

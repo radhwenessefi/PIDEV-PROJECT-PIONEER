@@ -41,11 +41,11 @@ public class BankAccount {
    @Enumerated(EnumType.STRING)
   private AccountType accountType;
 
-       /* @OneToMany
-       Set<Transaction> transactions; */
+
 
     @ManyToOne
     User usersBank;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy="bankaccounts")
     private Set<MicroLoan> microLoans;
 

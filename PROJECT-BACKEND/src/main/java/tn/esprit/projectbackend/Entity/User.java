@@ -1,5 +1,6 @@
 package tn.esprit.projectbackend.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import tn.esprit.projectbackend.Entity.Portfolio;
@@ -27,13 +28,14 @@ public class User {
 
 
 
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy="usersproject")
-//    private Set<Project> projects;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy="usersportfolio")
     private Set<PortfolioInvestment> portfolioInvestments;
    @OneToMany(cascade = CascadeType.ALL, mappedBy="usersBank")
+   @JsonIgnore
     private Set<BankAccount> bankAccounts;
     @OneToMany(cascade = CascadeType.ALL, mappedBy="usersproject")
+    @JsonIgnore
     private Set<ProjectInvestment> projectInvestments;
 
 

@@ -6,6 +6,8 @@ import tn.esprit.projectbackend.Entity.PortfolioInvestment;
 import tn.esprit.projectbackend.Entity.User;
 import tn.esprit.projectbackend.Repository.PortfolioInvestmentRepository;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class PortfolioInvestmentServiceImp implements IPortfolioInvestmentService{
@@ -13,11 +15,10 @@ public class PortfolioInvestmentServiceImp implements IPortfolioInvestmentServic
     private static User user;
 
     public void addPortfolioInvestment(PortfolioInvestment p) {
-
         try {
-            //idUser=p.getUsers().getUserId();
-            PortfolioInvestment portfolioInvestment =(PortfolioInvestment) portfolioInvestmentRepository.findByUsersportfolio(p.getUsersportfolio());
-            if (portfolioInvestment != null) {
+            List<PortfolioInvestment> portfolioInvestments = portfolioInvestmentRepository.findByUsersportfolio(p.getUsersportfolio());
+            if (!portfolioInvestments.isEmpty()) {
+                PortfolioInvestment portfolioInvestment = portfolioInvestments.get(0); // Assuming you want to use the first result
                 p.setAmount(p.getAmount() + portfolioInvestment.getAmount());
             } else {
                 portfolioInvestmentRepository.save(p);
@@ -26,5 +27,6 @@ public class PortfolioInvestmentServiceImp implements IPortfolioInvestmentServic
             e.printStackTrace();
         }
     }
+
 
 }
