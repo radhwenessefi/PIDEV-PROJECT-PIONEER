@@ -19,7 +19,7 @@ public class ProjectInvestment {
     Date dateOfInsecription;
 
     @ManyToOne
-    User users;
+    User usersproject;
     @ManyToOne
     Project projects ;
 }

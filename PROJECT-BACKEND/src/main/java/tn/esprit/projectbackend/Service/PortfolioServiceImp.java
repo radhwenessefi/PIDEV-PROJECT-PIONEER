@@ -15,6 +15,7 @@ import tn.esprit.projectbackend.Repository.PortfolioRepository;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @AllArgsConstructor
@@ -29,6 +30,7 @@ public class PortfolioServiceImp implements IPortfolioService {
     public List<Portfolio> getAllPortfolio(){
         return portfolioRepository.findAll();
     }
+
     public Portfolio getPortfolio(Long portfolioId){
         return portfolioRepository.findById(portfolioId).get();
     }
@@ -56,5 +58,8 @@ public class PortfolioServiceImp implements IPortfolioService {
             // Handle the error as needed
             return Collections.emptyList();
         }
+    }
+    public List<Map<String, Portfolio>>  getPortfolioByCluster(){
+        return portfolioRepository.findPortfoliosGroupedByClusterLabel();
     }
 }

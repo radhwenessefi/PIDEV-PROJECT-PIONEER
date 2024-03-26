@@ -18,8 +18,9 @@ public class PortfolioInvestment {
     Long amount;
     Date dateOfInsecription;
 
+
     @ManyToOne
-    User users;
+    User usersportfolio;
     @ManyToOne
     Portfolio portfolios ;
 }

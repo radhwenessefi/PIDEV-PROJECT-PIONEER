@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @AllArgsConstructor
@@ -28,8 +29,8 @@ public class PortfolioResController {
         return portfolio;
     }
     @PostMapping("/add-portfolio")
-    public  Portfolio addPortfolio(@RequestBody Portfolio b){
-        Portfolio portfolio = portfolioService.addPortfolio(b);
+    public  Portfolio addPortfolio(@RequestBody Portfolio p){
+        Portfolio portfolio = portfolioService.addPortfolio(p);
         return  portfolio;
     }
     @DeleteMapping("/remove-portfolio/{portfolio-id}")
@@ -60,6 +61,10 @@ public class PortfolioResController {
         }
     }
 
-
+    @GetMapping("/get-clustred-portfolios")
+    public  List<Map<String,Portfolio>> getPortfolioByCluster(){
+        List<Map<String,Portfolio>> listAllPortfolios = portfolioService.getPortfolioByCluster();
+        return listAllPortfolios;
+    }
 
 }

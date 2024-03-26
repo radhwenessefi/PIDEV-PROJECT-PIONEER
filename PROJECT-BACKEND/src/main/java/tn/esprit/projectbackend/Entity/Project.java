@@ -25,8 +25,8 @@ public class Project {
 
      @OneToOne
      BusinessPlan businessPlan;
-     @ManyToOne
-     User users;
+//     @ManyToOne
+//     User users;
     @OneToMany(cascade = CascadeType.ALL, mappedBy="projects")
     private Set<ProjectInvestment> projectInvestments;
 
