@@ -1,4 +1,4 @@
-package tn.esprit.projectbackend.Entity;
+package tn.esprit.projectbackend.entity;
 
 public enum TransactionType {
     Deposit,

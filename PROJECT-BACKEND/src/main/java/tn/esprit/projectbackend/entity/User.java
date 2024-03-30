@@ -1,10 +1,8 @@
-package tn.esprit.projectbackend.Entity;
+package tn.esprit.projectbackend.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import tn.esprit.projectbackend.Entity.Portfolio;
 
-import java.awt.font.NumericShaper;
 import java.util.Set;
 
 @Entity
