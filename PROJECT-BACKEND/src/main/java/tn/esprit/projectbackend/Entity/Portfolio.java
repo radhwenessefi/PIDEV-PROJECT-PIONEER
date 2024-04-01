@@ -17,6 +17,7 @@ public class Portfolio {
     String symbol;
     String volume;
     Float adjClose;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="portfolios")
-    private Set<PortfolioInvestment> portfolioInvestments;
+    @ManyToMany(mappedBy="portfolios", cascade = CascadeType.ALL)
+    private Set<User> users;
+
 }
