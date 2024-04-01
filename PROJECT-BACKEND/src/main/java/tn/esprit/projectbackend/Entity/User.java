@@ -1,14 +1,14 @@
-package tn.esprit.projectbackend.Entity;
+package tn.esprit.projectbackend.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import tn.esprit.projectbackend.Entity.enumerations.Role;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.lang.NonNull;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import tn.esprit.projectbackend.entity.enumerations.Role;
 
 import java.util.Collection;
 import java.util.Date;
@@ -53,7 +53,7 @@ public class User implements UserDetails {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JsonManagedReference
-    private Wallet wallet ;
+    private tn.esprit.projectbackend.Entity.Wallet wallet ;
 
     @ManyToMany
     private Set<Portfolio> portfolios ;

@@ -1,4 +1,4 @@
-package tn.esprit.projectbackend.Entity.enumerations;
+package tn.esprit.projectbackend.entity.enumerations;
 
 public enum WalletStatus {
     ACTIVE , FROZEN , CLOSED
