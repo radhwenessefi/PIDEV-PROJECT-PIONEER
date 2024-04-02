@@ -1,2 +1,6 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(וÝ‰½‏ÿÿÿÿ8וÞֵ´ח1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(וÝ‰½‏ÿÿÿÿ8¬קאני1
+x
+java:S2159"VRemove this call to "equals"; comparisons between unrelated types always return false.(פנ—בתÿÿÿÿ8€בני1
+x
+java:S2159"VRemove this call to "equals"; comparisons between unrelated types always return false.(ˆץ£Êÿÿÿÿÿ8‡בני1

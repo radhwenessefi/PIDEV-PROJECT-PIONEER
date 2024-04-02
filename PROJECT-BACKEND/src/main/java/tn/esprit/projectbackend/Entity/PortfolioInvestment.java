@@ -18,6 +18,11 @@ public class PortfolioInvestment {
     Long idPortfolioInvestement;
     Long amount;
     Date dateOfInsecription;
+    Long takeProfit;
+    Long stopLoss;
+
+    @Enumerated(EnumType.STRING)
+    OrderType orderType;
 
 
     @ManyToOne
