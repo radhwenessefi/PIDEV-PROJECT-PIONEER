@@ -14,7 +14,6 @@ import tn.esprit.projectbackend.dto.requests.ResetPasswordRequest;
 import tn.esprit.projectbackend.dto.responses.AuthenticationResponse;
 import tn.esprit.projectbackend.dto.responses.MessageResponse;
 import tn.esprit.projectbackend.service.AuthenticationService;
-
 import java.io.IOException;
 
 @RestController
@@ -58,6 +57,9 @@ public class AuthenticationController {
                 .body(new MessageResponse("check your email to verify your account !"));
     }
 
+
+
+    //ki tenzel al lien fl mail nconsommi hedhi endpoint
     @GetMapping("/verifyAccount")
     public ResponseEntity<?> verifyAccount(@RequestParam("token") String verifyToken) {
         try {

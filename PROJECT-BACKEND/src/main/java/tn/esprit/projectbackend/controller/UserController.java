@@ -1,6 +1,4 @@
 package tn.esprit.projectbackend.controller;
-
-
 import tn.esprit.projectbackend.dto.requests.UpdateUserRequest;
 import tn.esprit.projectbackend.dto.responses.ImageResponse;
 import tn.esprit.projectbackend.dto.responses.MessageResponse;

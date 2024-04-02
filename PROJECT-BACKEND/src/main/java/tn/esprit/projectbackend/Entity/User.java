@@ -55,7 +55,7 @@ public class User implements UserDetails {
     @JsonManagedReference
     private Wallet wallet ;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<Portfolio> portfolios ;
 
     @Override
