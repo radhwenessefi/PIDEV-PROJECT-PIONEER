@@ -36,7 +36,7 @@ public class Portfolio {
     @JsonProperty("Symbol")
     String symbol;
     @JsonProperty("Cluster_Labels")
-    int clusterLabels;
+    Long clusterLabels;
     @OneToMany(cascade = CascadeType.ALL, mappedBy="portfolios")
     @JsonIgnore
     private Set<PortfolioInvestment> portfolioInvestments;

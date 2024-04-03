@@ -6,4 +6,5 @@ import tn.esprit.projectbackend.Repository.PortfolioInvestmentRepository;
 public interface IPortfolioInvestmentService {
     public void addPortfolioInvestment(PortfolioInvestment p);
 
+
 }

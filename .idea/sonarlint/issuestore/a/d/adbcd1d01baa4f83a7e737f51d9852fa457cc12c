@@ -1,5 +1,9 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(€Ñ¡ùÿÿÿÿ8€¸í²ç1
+w
+java:S11923"UDefine a constant instead of duplicating this literal "Raw API response: {}" 4 times.(¢†Ğûùÿÿÿÿ8ÊÍàòé1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(€Ñ¡ùÿÿÿÿ8£ñÜòé1
 m
-java:S3655#"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(»‘ãÔ8¸í²ç1
-]	java:S125"<This block of commented-out lines of code should be removed.(±º¶Ñûÿÿÿÿ8¨¸í²ç1
+java:S3655&"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(»‘ãÔ8¯ñÜòé1
+X	java:S125"<This block of commented-out lines of code should be removed.(øğäü8ÄñÜòé1
+l
+java:S1128"ORemove this unused import 'org.springframework.beans.factory.annotation.Value'.(ìø›8“Œ†Œê1

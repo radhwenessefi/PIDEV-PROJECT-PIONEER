@@ -1,5 +1,6 @@
 package tn.esprit.projectbackend;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,6 +14,7 @@ import java.util.List;
 
 
 @SpringBootTest
+@Slf4j
 class ProjectBackendApplicationTests {
 	private PortfolioServiceImp yourServiceClass ;
 	@Autowired
@@ -24,4 +26,11 @@ class ProjectBackendApplicationTests {
 		Assertions.assertNotNull(result);
 
 	}
+//	@Test
+//	public void testFetchDataFromApi1(){
+//		Float result =portfolioService.predictionForVolume(List p);
+//		log.info("the result is "+ result);
+//
+//
+//	}
 }

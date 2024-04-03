@@ -1,16 +1,15 @@
 package tn.esprit.projectbackend.Service;
-
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.projectbackend.Entity.PortfolioInvestment;
 import tn.esprit.projectbackend.Entity.User;
 import tn.esprit.projectbackend.Repository.PortfolioInvestmentRepository;
-
 import java.util.List;
 
 @Service
 @AllArgsConstructor
 public class PortfolioInvestmentServiceImp implements IPortfolioInvestmentService{
+
     PortfolioInvestmentRepository portfolioInvestmentRepository ;
     private static User user;
 
@@ -27,6 +26,4 @@ public class PortfolioInvestmentServiceImp implements IPortfolioInvestmentServic
             e.printStackTrace();
         }
     }
-
-
 }

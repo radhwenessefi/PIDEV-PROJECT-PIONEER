@@ -2,6 +2,7 @@ package tn.esprit.projectbackend.Controller;
 
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.projectbackend.Entity.Portfolio;
@@ -10,11 +11,13 @@ import org.springframework.http.ResponseEntity;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @RestController
 @AllArgsConstructor
+@Slf4j
 @RequestMapping("/portfolio")
 public class PortfolioResController {
     IPortfolioService portfolioService;
@@ -61,10 +64,36 @@ public class PortfolioResController {
         }
     }
 
+
     @GetMapping("/get-clustred-portfolios")
-    public  List<Map<String,Portfolio>> getPortfolioByCluster(){
-        List<Map<String,Portfolio>> listAllPortfolios = portfolioService.getPortfolioByCluster();
-        return listAllPortfolios;
+    public List<Map<Long, List<Portfolio>>> getPortfolioByCluster() {
+        List<Map<Long, Portfolio>> listAllPortfolios = portfolioService.getPortfolioByCluster();
+        log.info("the result is " + listAllPortfolios);
+        List<Map<Long, List<Portfolio>>> result = new ArrayList<>();
+
+        // Group portfolios by cluster label
+        Map<String, List<Portfolio>> groupedPortfolios = new HashMap<>();
+        for (Map<Long, Portfolio> portfolioMap : listAllPortfolios) {
+            for (Map.Entry<Long, Portfolio> entry : portfolioMap.entrySet()) {
+                String clusterLabel = String.valueOf(entry.getKey());
+                Portfolio portfolio = entry.getValue();
+                groupedPortfolios.computeIfAbsent(clusterLabel, k -> new ArrayList<>()).add(portfolio);
+            }
+        }
+
+        for (Map.Entry<String, List<Portfolio>> entry : groupedPortfolios.entrySet()) {
+            Map<Long, List<Portfolio>> clusterMap = new HashMap<>();
+            Long clusterLabel = Long.parseLong(entry.getKey()); // Parse the String key to Long
+            clusterMap.put(clusterLabel, entry.getValue());
+            result.add(clusterMap);
+        }
+        return result;
     }
+    @PostMapping("/get-prediction-portfolios")
+    public Float pridectionPortFolio(@RequestBody List p){
+        Float pridiction = portfolioService.predictionForVolume(p);
+        return pridiction;
+    }
+
 
 }

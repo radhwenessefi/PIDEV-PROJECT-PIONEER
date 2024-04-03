@@ -5,6 +5,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -19,13 +21,14 @@ import java.util.Map;
 
 @Service
 @AllArgsConstructor
+@PropertySource("classpath:application.properties")
 public class PortfolioServiceImp implements IPortfolioService {
     PortfolioRepository portfolioRepository;
-        private final RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate = new RestTemplate();
     ObjectMapper mapper = new ObjectMapper();
-    //    @Value("${api.url}")
-// private String apiUrl;
+    //@Value("${api.url}") private String apiUrl;
     private static String apiTest="http://127.0.0.1:8000/apply_dbscan";
+    private static String apiTest1="http://127.0.0.1:8000/apply_dbscan";
     private static final Logger logger = LoggerFactory.getLogger(PortfolioServiceImp.class);
     public List<Portfolio> getAllPortfolio(){
         return portfolioRepository.findAll();
@@ -59,7 +62,14 @@ public class PortfolioServiceImp implements IPortfolioService {
             return Collections.emptyList();
         }
     }
-    public List<Map<String, Portfolio>>  getPortfolioByCluster(){
+    public List<Map<Long, Portfolio>>  getPortfolioByCluster(){
         return portfolioRepository.findPortfoliosGroupedByClusterLabel();
+    }
+    public Float predictionForVolume(List p){
+        logger.info("Raw API response: {}", apiTest);
+        ResponseEntity<Float> rawResponseEntity = restTemplate.getForEntity(apiTest1, Float.class);
+        Float rawResponse = rawResponseEntity.getBody();
+        logger.info("Raw API response: {}", rawResponse);
+        return rawResponse;
     }
 }

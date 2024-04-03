@@ -9,6 +9,8 @@ import java.util.Map;
 
 public interface PortfolioRepository extends JpaRepository<Portfolio,Long> {
 
-    @Query(value = "SELECT * FROM portfolio GROUP BY cluster_labels", nativeQuery = true)
-    List<Map<String, Portfolio>> findPortfoliosGroupedByClusterLabel();
+    @Query(value = "SELECT * FROM portfolio", nativeQuery = true)
+    List<Map<Long, Portfolio>> findPortfoliosGroupedByClusterLabel();
+
+
 }
