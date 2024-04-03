@@ -1,4 +1,4 @@
-package tn.esprit.projectbackend.entity;
+package tn.esprit.projectbackend.Entity;
 
 
 import jakarta.persistence.*;

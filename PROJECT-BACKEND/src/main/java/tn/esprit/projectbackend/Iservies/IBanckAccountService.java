@@ -1,6 +1,7 @@
 package tn.esprit.projectbackend.Iservies;
 
-import tn.esprit.projectbackend.entity.BankAccount;
+import tn.esprit.projectbackend.Entity.AccountType;
+import tn.esprit.projectbackend.Entity.BankAccount;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,5 +12,4 @@ public interface IBanckAccountService {
     BankAccount add(BankAccount bankAccount);
     BankAccount update(BankAccount bankAccount);
     void delete(Long id);
-
 }

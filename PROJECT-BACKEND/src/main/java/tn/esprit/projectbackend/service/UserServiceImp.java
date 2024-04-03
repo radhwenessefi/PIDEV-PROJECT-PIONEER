@@ -48,6 +48,12 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
+
+    public User findUserById(Integer userId){
+        return userRepository.findById(userId).orElse(null);
+    }
+
+    @Override
     public String currentUploadDirectory( Principal connectedUser) {
         User current = getCurrentUser(connectedUser) ;
        return  "src/main/resources/user_images/"  + current.getId() + current.getFirstname() ;

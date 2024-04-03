@@ -1,5 +1,6 @@
-package tn.esprit.projectbackend.entity;
+package tn.esprit.projectbackend.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,15 +29,18 @@ public class BankAccount {
     @Enumerated(EnumType.STRING)
     private AccountType accountType;
 
-
-   /* @OneToMany
-       Set<Transaction> transactions; */
-
     @ManyToOne
-    User usersBank;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="bankaccounts")
+    @JsonIgnore
+    private User usersBank;
+
+
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<MicroLoan> microLoans;
 
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Transaction> transactions;
 
 
 }

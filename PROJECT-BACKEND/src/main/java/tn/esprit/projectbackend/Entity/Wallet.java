@@ -1,4 +1,4 @@
-package tn.esprit.projectbackend.entity;
+package tn.esprit.projectbackend.Entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import tn.esprit.projectbackend.Entity.enumerations.WalletStatus;

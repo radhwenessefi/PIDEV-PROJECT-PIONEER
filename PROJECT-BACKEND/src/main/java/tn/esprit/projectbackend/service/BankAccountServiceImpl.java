@@ -1,10 +1,11 @@
-package tn.esprit.projectbackend.servicesImpl;
+package tn.esprit.projectbackend.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import tn.esprit.projectbackend.Entity.AccountType;
 import tn.esprit.projectbackend.Iservies.IBanckAccountService;
-import tn.esprit.projectbackend.entity.BankAccount;
-import tn.esprit.projectbackend.repositories.BankAccountRepos;
+import tn.esprit.projectbackend.Entity.BankAccount;
+import tn.esprit.projectbackend.repository.BankAccountRepos;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -13,7 +14,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class BancAccountServiceImpl implements IBanckAccountService {
+public class BankAccountServiceImpl implements IBanckAccountService {
     private final BankAccountRepos bankAccountRepository;
 
     @Override
@@ -33,6 +34,9 @@ public class BancAccountServiceImpl implements IBanckAccountService {
         return bankAccountRepository.save(bankAccount);
     }
 
+
+
+
     @Override
     public BankAccount update(BankAccount bankAccount) {
         Optional<BankAccount> existingBankAccount = bankAccountRepository.findById(bankAccount.getId());
@@ -49,4 +53,5 @@ public class BancAccountServiceImpl implements IBanckAccountService {
     public void delete(Long id) {
         bankAccountRepository.deleteById(id);
     }
+
 }

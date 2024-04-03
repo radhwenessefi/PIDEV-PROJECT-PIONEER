@@ -1,10 +1,7 @@
-package tn.esprit.projectbackend.repositories;
+package tn.esprit.projectbackend.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import tn.esprit.projectbackend.entity.Transaction;
-
-import java.util.List;
-import java.util.Optional;
+import tn.esprit.projectbackend.Entity.Transaction;
 
 public interface TransactionRepos extends JpaRepository<Transaction,Long> {
 }

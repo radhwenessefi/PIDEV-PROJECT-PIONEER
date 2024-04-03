@@ -23,4 +23,5 @@ public interface UserService {
 
     public void updateProfileImage( MultipartFile imageFile , Principal connectedUser) throws IOException;
 
+    public User findUserById(Integer userId);
 }

@@ -1,6 +1,7 @@
-package tn.esprit.projectbackend.entity;
+package tn.esprit.projectbackend.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -25,14 +26,25 @@ public class Transaction {
     private Long id;
     private Instant Date;
     private Long amount;
-    private Long transferFrom;
-    private Long transferTo;
+    private Long senderId;
+    private Long receiverId;
+    private TransactionType transactionType;
+
+
+
+
+    @JsonIgnore
 
     @Enumerated(EnumType.STRING)
     private AccountType accountType;
 
-       /* @OneToMany
-       Set<jakarta.transaction.Transaction> transactions;*/
+
+
+
+    @JsonIgnore
+
+    @ManyToOne
+ BankAccount bankAccount ;
 
 
 }

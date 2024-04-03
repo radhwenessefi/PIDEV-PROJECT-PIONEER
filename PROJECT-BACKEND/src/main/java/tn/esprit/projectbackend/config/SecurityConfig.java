@@ -37,7 +37,7 @@ public class SecurityConfig  implements WebMvcConfigurer {
               req.requestMatchers("/api/v1/auth/**")
               .permitAll()
               .anyRequest()
-              .authenticated()
+              .permitAll()
               )
               .sessionManagement(session -> session.sessionCreationPolicy(STATELESS))
               .authenticationProvider(authenticationProvider)

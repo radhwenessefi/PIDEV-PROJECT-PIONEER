@@ -7,12 +7,12 @@ import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.WebUtils;
-import tn.esprit.projectbackend.Entity.User;
 import tn.esprit.projectbackend.dto.requests.AuthenticationRequest;
 import tn.esprit.projectbackend.dto.requests.RegisterRequest;
 import tn.esprit.projectbackend.dto.requests.ResetPasswordRequest;
 import tn.esprit.projectbackend.dto.responses.AuthenticationResponse;
 import tn.esprit.projectbackend.dto.responses.MessageResponse;
+import tn.esprit.projectbackend.Entity.User;
 import tn.esprit.projectbackend.service.AuthenticationService;
 
 import java.io.IOException;

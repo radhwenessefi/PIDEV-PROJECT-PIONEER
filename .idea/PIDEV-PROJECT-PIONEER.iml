@@ -5,6 +5,7 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="commons-codec-1.15" level="project" />
   </component>
   <component name="SonarLintModuleSettings">
     <option name="uniqueId" value="f7efb22c-9edb-45eb-b6a9-87cc12f507fb" />

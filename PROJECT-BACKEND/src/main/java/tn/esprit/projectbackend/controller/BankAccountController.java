@@ -1,12 +1,12 @@
-package tn.esprit.projectbackend.controlleurs;
+package tn.esprit.projectbackend.controller;
 
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import tn.esprit.projectbackend.Entity.AccountType;
 import tn.esprit.projectbackend.Iservies.IBanckAccountService;
-import tn.esprit.projectbackend.entity.BankAccount;
+import tn.esprit.projectbackend.Entity.BankAccount;
 
 import java.util.List;
 import java.util.Optional;
@@ -48,5 +48,6 @@ public class BankAccountController {
         bankAccountService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
 }
 

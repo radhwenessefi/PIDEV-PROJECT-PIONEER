@@ -1,4 +1,4 @@
-package tn.esprit.projectbackend.entity.enumerations;
+package tn.esprit.projectbackend.Entity.enumerations;
 
 public enum Role {
     Agent , Client , Investisseur , Admin
