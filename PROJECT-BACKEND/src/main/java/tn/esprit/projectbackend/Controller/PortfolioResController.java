@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.projectbackend.Entity.Portfolio;
+import tn.esprit.projectbackend.Entity.Pridect;
 import tn.esprit.projectbackend.Service.IPortfolioService;
 import org.springframework.http.ResponseEntity;
 
@@ -75,7 +76,7 @@ public class PortfolioResController {
         Map<String, List<Portfolio>> groupedPortfolios = new HashMap<>();
         for (Map<Long, Portfolio> portfolioMap : listAllPortfolios) {
             for (Map.Entry<Long, Portfolio> entry : portfolioMap.entrySet()) {
-                String clusterLabel = String.valueOf(entry.getKey());
+               String clusterLabel = String.valueOf(entry.getKey());
                 Portfolio portfolio = entry.getValue();
                 groupedPortfolios.computeIfAbsent(clusterLabel, k -> new ArrayList<>()).add(portfolio);
             }
@@ -83,17 +84,16 @@ public class PortfolioResController {
 
         for (Map.Entry<String, List<Portfolio>> entry : groupedPortfolios.entrySet()) {
             Map<Long, List<Portfolio>> clusterMap = new HashMap<>();
-            Long clusterLabel = Long.parseLong(entry.getKey()); // Parse the String key to Long
+            Long clusterLabel = Long.valueOf(entry.getKey()); // Parse the String key to Long
             clusterMap.put(clusterLabel, entry.getValue());
             result.add(clusterMap);
         }
         return result;
     }
     @PostMapping("/get-prediction-portfolios")
-    public Float pridectionPortFolio(@RequestBody List p){
+    public Float pridectionPortFolio(@RequestBody Pridect p){
+        log.info("test"+p);
         Float pridiction = portfolioService.predictionForVolume(p);
         return pridiction;
     }
-
-
 }

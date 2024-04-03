@@ -29,7 +29,7 @@ async def prediction_volume(item: VolumesItem):
         predicted_value_list = predicted_value.tolist()  # Convert NumPy array to Python list
 
 # Now you can convert the list to JSON
-        predicted_json = json.dumps(predicted_value_list)
-        return{"result": predicted_json }
+        predicted_json = json.dumps(predicted_value_list[0][0])
+        return{ predicted_json }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

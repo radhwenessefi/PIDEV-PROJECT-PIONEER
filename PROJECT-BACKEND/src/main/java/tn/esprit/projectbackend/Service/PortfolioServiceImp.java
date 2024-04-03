@@ -7,11 +7,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.web.client.RestTemplate;
 import tn.esprit.projectbackend.Entity.Portfolio;
+import tn.esprit.projectbackend.Entity.Pridect;
 import tn.esprit.projectbackend.Repository.PortfolioRepository;
 
 import java.io.IOException;
@@ -28,7 +33,7 @@ public class PortfolioServiceImp implements IPortfolioService {
     ObjectMapper mapper = new ObjectMapper();
     //@Value("${api.url}") private String apiUrl;
     private static String apiTest="http://127.0.0.1:8000/apply_dbscan";
-    private static String apiTest1="http://127.0.0.1:8000/apply_dbscan";
+    private static String apiTest1="http://127.0.0.1:8000/Prediction";
     private static final Logger logger = LoggerFactory.getLogger(PortfolioServiceImp.class);
     public List<Portfolio> getAllPortfolio(){
         return portfolioRepository.findAll();
@@ -65,11 +70,40 @@ public class PortfolioServiceImp implements IPortfolioService {
     public List<Map<Long, Portfolio>>  getPortfolioByCluster(){
         return portfolioRepository.findPortfoliosGroupedByClusterLabel();
     }
-    public Float predictionForVolume(List p){
-        logger.info("Raw API response: {}", apiTest);
-        ResponseEntity<Float> rawResponseEntity = restTemplate.getForEntity(apiTest1, Float.class);
-        Float rawResponse = rawResponseEntity.getBody();
-        logger.info("Raw API response: {}", rawResponse);
-        return rawResponse;
+
+
+    public Float predictionForVolume(Pridect p) {
+        try {
+            // Convert Pridect object to JSON string with desired format
+            String requestBodyJson = String.format("{\"Open\": %s, \"High\": %s, \"Low\": %s, \"Close\": %s, \"Adj_close\": %s}",
+                    p.getOpen(), p.getHigh(), p.getLow(), p.getClose(), p.getAdj_close());
+
+            // Log the JSON request body
+            logger.info("Request body: {}", requestBodyJson);
+
+            // Set headers
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            HttpEntity<String> requestEntity = new HttpEntity<>(requestBodyJson, headers);
+
+            // Make the API call with the JSON request body
+            ResponseEntity<String> rawResponseEntity = restTemplate.postForEntity(apiTest1, requestEntity, String.class);
+            String rawResponse = rawResponseEntity.getBody();
+
+            // Log the API response
+            logger.info("Raw API response: {}", rawResponse);
+
+            // Extract the float value from the response
+            Float rawResponseValue = Float.parseFloat(rawResponse.substring(2, rawResponse.length() - 2));
+
+            return rawResponseValue;
+        } catch (Exception e) {
+            logger.error("Error occurred while processing the request: {}", e.getMessage());
+            return null;
+        }
     }
+
+
+
+
 }

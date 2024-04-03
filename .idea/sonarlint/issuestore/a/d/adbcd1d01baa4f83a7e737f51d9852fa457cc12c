@@ -1,9 +1,15 @@
 
 w
-java:S11923"UDefine a constant instead of duplicating this literal "Raw API response: {}" 4 times.(¢†Ğûùÿÿÿÿ8ÊÍàòé1
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(€Ñ¡ùÿÿÿÿ8£ñÜòé1
+java:S11928"UDefine a constant instead of duplicating this literal "Raw API response: {}" 3 times.(¢†Ğûùÿÿÿÿ8óº™ ê1
+…
+java:S1488a"hImmediately return this expression instead of assigning it to the temporary variable "rawResponseValue".(’ˆºı8¡ÿ÷ ê1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(€Ñ¡ùÿÿÿÿ8±Ø€ ê1
+f
+java:S2259a"IA "NullPointerException" could be thrown; "rawResponse" is nullable here.(’ˆºı8Ùÿ÷ ê1
 m
-java:S3655&"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(»‘ãÔ8¯ñÜòé1
-X	java:S125"<This block of commented-out lines of code should be removed.(øğäü8ÄñÜòé1
+java:S3655+"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(»‘ãÔ8ìØ€ ê1
+X	java:S125""<This block of commented-out lines of code should be removed.(øğäü8‘Ù€ ê1
 l
-java:S1128"ORemove this unused import 'org.springframework.beans.factory.annotation.Value'.(ìø›8“Œ†Œê1
+java:S1128"ORemove this unused import 'org.springframework.beans.factory.annotation.Value'.(ìø›8™ÜÄ ê1
+;
+java:S1128"Remove this duplicated import.(´‘¨™8ì ê1

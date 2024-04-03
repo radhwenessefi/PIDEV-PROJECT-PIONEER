@@ -75,3 +75,5 @@ KPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Entity/TypeRole.java,2\
 LPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Entity/OrderType.java,b\c\bc83c52c070e0c57e4991eb23e4a26557f57a53d
 —
 gPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Controller/PortfolioInvestmentResController.java,9\c\9c9419d68524a56ed41885cd0608be3e0a0feea6
+z
+JPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Entity/Pridect.java,b\b\bbac78ad3af0e2cd68a6a97fdd8a850feee467dd

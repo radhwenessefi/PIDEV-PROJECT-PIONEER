@@ -2,6 +2,7 @@ package tn.esprit.projectbackend.Service;
 
 
 import tn.esprit.projectbackend.Entity.Portfolio;
+import tn.esprit.projectbackend.Entity.Pridect;
 
 import java.util.List;
 import java.util.Map;
@@ -14,5 +15,5 @@ public interface IPortfolioService {
     public  Portfolio modifyPortfolio(Portfolio portfolio);
     public List<Portfolio> fetchDataFromApi();
     public List<Map<Long,Portfolio>> getPortfolioByCluster();
-    public Float predictionForVolume(List p);
+    public Float predictionForVolume(Pridect p);
 }

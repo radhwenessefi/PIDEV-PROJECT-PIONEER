@@ -1,17 +1,14 @@
 
-L
-java:S3740]"/Provide the parametrized type for this generic.(¦À„Ÿ8Áï÷Šê1
 ‹
-java:S1488"iImmediately return this expression instead of assigning it to the temporary variable "listAllPortfolios".(¿¼ñóüÿÿÿÿ8Âï÷Šê1
+java:S1488"iImmediately return this expression instead of assigning it to the temporary variable "listAllPortfolios".(¿¼ñóüÿÿÿÿ8ò¤Çžê1
 ƒ
-java:S1488"aImmediately return this expression instead of assigning it to the temporary variable "portfolio".(Ì²ŠÞøÿÿÿÿ8Âï÷Šê1
+java:S1488 "aImmediately return this expression instead of assigning it to the temporary variable "portfolio".(Ì²ŠÞøÿÿÿÿ8ò¤Çžê1
 ƒ
-java:S1488$"aImmediately return this expression instead of assigning it to the temporary variable "portfolio".(Ž·‘¹úÿÿÿÿ8Âï÷Šê1
+java:S1488%"aImmediately return this expression instead of assigning it to the temporary variable "portfolio".(Ž·‘¹úÿÿÿÿ8ò¤Çžê1
 ~
-java:S1488-"aImmediately return this expression instead of assigning it to the temporary variable "portfolio".(ñø¶Š8Âï÷Šê1
+java:S1488."aImmediately return this expression instead of assigning it to the temporary variable "portfolio".(ñø¶Š8ò¤Çžê1
 „
-java:S1488^"bImmediately return this expression instead of assigning it to the temporary variable "pridiction".(ýÑóÆøÿÿÿÿ8Âï÷Šê1
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(åÝ‰½þÿÿÿÿ8Ãï÷Šê1
+java:S1488`"bImmediately return this expression instead of assigning it to the temporary variable "pridiction".(ýÑóÆøÿÿÿÿ8ò¤Çžê1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(åÝ‰½þÿÿÿÿ8ó¤Çžê1
 @
-java:S1128
-"Remove this duplicated import.(¶¯ø¦úÿÿÿÿ8Ôï÷Šê1
+java:S1128"Remove this duplicated import.(¶¯ø¦úÿÿÿÿ8‰¥Çžê1

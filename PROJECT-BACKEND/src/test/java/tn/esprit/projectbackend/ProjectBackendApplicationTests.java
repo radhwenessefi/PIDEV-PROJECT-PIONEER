@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 import tn.esprit.projectbackend.Entity.Portfolio;
+import tn.esprit.projectbackend.Entity.Pridect;
 import tn.esprit.projectbackend.Service.IPortfolioService;
 import tn.esprit.projectbackend.Service.PortfolioServiceImp;
 import org.junit.jupiter.api.Test;
@@ -28,7 +29,7 @@ class ProjectBackendApplicationTests {
 	}
 //	@Test
 //	public void testFetchDataFromApi1(){
-//		Float result =portfolioService.predictionForVolume(List p);
+//		Float result =portfolioService.predictionForVolume(Pridect p);
 //		log.info("the result is "+ result);
 //
 //
