@@ -24,11 +24,6 @@ public class User {
      String email;
      String password;
 
-
-
-
-
-
     @OneToMany(cascade = CascadeType.ALL, mappedBy="usersportfolio")
     private Set<PortfolioInvestment> portfolioInvestments;
    @OneToMany(cascade = CascadeType.ALL, mappedBy="usersBank")
@@ -37,8 +32,5 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, mappedBy="usersproject")
     @JsonIgnore
     private Set<ProjectInvestment> projectInvestments;
-
-
-
 
 }

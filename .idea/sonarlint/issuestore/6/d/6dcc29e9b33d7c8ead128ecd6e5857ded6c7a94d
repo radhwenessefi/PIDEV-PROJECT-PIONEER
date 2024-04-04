@@ -1,0 +1,8 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(€Ñ¡ùÿÿÿÿ8»¶º°ê1
+>
+java:S1116"Remove this empty statement.(ôŸŽìúÿÿÿÿ8ã•’»ê1
+e
+java:S1128"IRemove this unused import 'tn.esprit.projectbackend.Entity.BusinessPlan'.(Ö£·,8¿²“»ê1
+f
+java:S1128"DRemove this unused import 'tn.esprit.projectbackend.Entity.Project'.(“Ð¡Õþÿÿÿÿ8¿²“»ê1

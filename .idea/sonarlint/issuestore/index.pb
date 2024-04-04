@@ -77,3 +77,11 @@ LPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Entity/OrderType.java,b
 gPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Controller/PortfolioInvestmentResController.java,9\c\9c9419d68524a56ed41885cd0608be3e0a0feea6
 z
 JPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Entity/Pridect.java,b\b\bbac78ad3af0e2cd68a6a97fdd8a850feee467dd
+‚
+RPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Service/UserServiceImp.java,6\d\6dcc29e9b33d7c8ead128ecd6e5857ded6c7a94d
+€
+PPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Service/IUserService.java,4\f\4fa6e38e93d65c703a3d1d1ed80d46e926da6f51
+…
+UPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Repository/UserRepository.java,2\c\2c6b80542b8dba20b06339a64ce8b848763a7710
+ˆ
+XPROJECT-BACKEND/src/main/java/tn/esprit/projectbackend/Controller/UserResController.java,b\8\b8bd101a352ae73c7601497be94bd50a302bc5ed

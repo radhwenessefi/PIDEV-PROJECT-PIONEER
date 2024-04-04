@@ -94,8 +94,11 @@ public class PortfolioServiceImp implements IPortfolioService {
             logger.info("Raw API response: {}", rawResponse);
 
             // Extract the float value from the response
-            Float rawResponseValue = Float.parseFloat(rawResponse.substring(2, rawResponse.length() - 2));
+            //Float rawResponseValue = Float.parseFloat(rawResponse.substring(2, rawResponse.length() - 2));
+            String numericPart = rawResponse.substring(3, rawResponse.length() - 4); // Adjust the substring indices
 
+// Parse the numeric part as a float
+            float rawResponseValue = Float.parseFloat(numericPart);
             return rawResponseValue;
         } catch (Exception e) {
             logger.error("Error occurred while processing the request: {}", e.getMessage());

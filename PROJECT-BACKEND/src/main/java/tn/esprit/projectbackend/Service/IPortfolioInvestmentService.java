@@ -4,7 +4,6 @@ import tn.esprit.projectbackend.Entity.PortfolioInvestment;
 import tn.esprit.projectbackend.Repository.PortfolioInvestmentRepository;
 
 public interface IPortfolioInvestmentService {
-    public void addPortfolioInvestment(PortfolioInvestment p);
-
-
+    public void addPortfolioInvestment(PortfolioInvestment p,Long userId,Long portfolioId);
+    public void closeOrder(Long invId);
 }

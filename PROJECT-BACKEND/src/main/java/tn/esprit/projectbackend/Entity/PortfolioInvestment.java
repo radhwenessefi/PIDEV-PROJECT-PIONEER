@@ -32,10 +32,10 @@ public class PortfolioInvestment {
     @Enumerated(EnumType.STRING)
     OrderType orderType;
 
-
+    @JsonIgnore
     @ManyToOne
     User usersportfolio;
-
+    @JsonIgnore
     @ManyToOne
     Portfolio portfolios ;
 }
