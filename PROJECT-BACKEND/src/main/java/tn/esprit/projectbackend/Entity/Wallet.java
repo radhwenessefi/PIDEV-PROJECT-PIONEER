@@ -27,4 +27,6 @@ public class Wallet {
     @JsonBackReference
     private User user ;
 
+    //1 to 1 maa projet w wallet aandha bacha user w user aandou barcha wallet
+
 }

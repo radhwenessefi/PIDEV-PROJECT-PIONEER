@@ -22,12 +22,12 @@ public class Project {
     String projectManger;
     String projectMembers;
 
-
      @OneToOne
      BusinessPlan businessPlan;
-
      @ManyToOne
      User user;
+
+
 
 
 }
