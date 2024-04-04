@@ -62,6 +62,7 @@ public class AuthenticationServiceImp implements AuthenticationService {
                 .registrationDate(new Date())
                 .enabled(false)
                 .build() ;
+        //tawa wallet tetzed maa user
         var wallet = Wallet.builder().user(user).ownerName(user.getFirstname()+" "+user.getLastname()).balance(1000)
                 .status(WalletStatus.ACTIVE).build() ;
         user.setWallet(wallet);
@@ -171,9 +172,6 @@ public class AuthenticationServiceImp implements AuthenticationService {
     @Override
     public void forgetPassword(String email) throws MessagingException {
 
-
-
-
         InternetAddress recipientAddress = new InternetAddress();
         email = email.trim() ;
         recipientAddress.setAddress(email);
@@ -189,7 +187,7 @@ public class AuthenticationServiceImp implements AuthenticationService {
 
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage);
-        mimeMessageHelper.setFrom(new InternetAddress("noreply@farmease.com"));
+        mimeMessageHelper.setFrom(new InternetAddress("noreply@PPioneers.com"));
         mimeMessageHelper.setTo(recipientAddress);
         mimeMessageHelper.setSubject("forgot password ?");
         mimeMessageHelper.setText(processedHTMLTemplate, true);
