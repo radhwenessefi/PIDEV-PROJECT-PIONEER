@@ -24,8 +24,8 @@ public class PortfolioInvestmentServiceImp implements IPortfolioInvestmentServic
     UserRepository userRepository;
     PortfolioRepository portfolioRepository;
     private static User user;
-    @Autowired
-    private JavaMailSender mailSender;
+//    @Autowired
+//    private JavaMailSender mailSender;
 
     public void addPortfolioInvestment(PortfolioInvestment p,Long userId, Long portfolioId) {
         try {

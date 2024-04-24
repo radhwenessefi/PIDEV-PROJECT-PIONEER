@@ -4,7 +4,4 @@ m
 java:S3655!"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ÑÑı8ëë·ê1
 r
 java:S3655 "PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ıÀ“Çúÿÿÿÿ8ëë·ê1
-_
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Æ˜¬¸ê1
-l
-java:S1128"PRemove this unused import 'org.springframework.http.StreamingHttpOutputMessage'.(ˆ†68Ñ˜¬¸ê1
+X	java:S125"<This block of commented-out lines of code should be removed.(šô‰8³ÿóÃê1
