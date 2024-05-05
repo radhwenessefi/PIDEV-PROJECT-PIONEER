@@ -1,7 +1,17 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(€Ñ¡ùÿÿÿÿ8…ëë·ê1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(€Ñ¡ùÿÿÿÿ8†’ˆ„ô1
 m
-java:S3655!"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ÑÑı8ëë·ê1
+java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ÑÑı8õç¯œô1
 r
-java:S3655 "PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ıÀ“Çúÿÿÿÿ8ëë·ê1
-X	java:S125"<This block of commented-out lines of code should be removed.(šô‰8³ÿóÃê1
+java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ıÀ“Çúÿÿÿÿ8öç¯œô1
+X	java:S1254"<This block of commented-out lines of code should be removed.(µİ€8×ö³…ô1
+u
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡¸Îùÿÿÿÿ8›è¯œô1
+l
+java:S1128"PRemove this unused import 'org.springframework.http.StreamingHttpOutputMessage'.(ˆ†68›è¯œô1
+d
+java:S1128"GRemove this unused import 'org.springframework.mail.SimpleMailMessage'.(€·ÊŒ8œè¯œô1
+j
+java:S1128"MRemove this unused import 'org.springframework.mail.javamail.JavaMailSender'.(ÕÃ›8œè¯œô1
+f
+java:S1128"DRemove this unused import 'tn.esprit.projectbackend.Entity.Project'.(“Ğ¡Õşÿÿÿÿ8œè¯œô1

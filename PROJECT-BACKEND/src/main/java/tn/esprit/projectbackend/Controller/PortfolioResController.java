@@ -15,13 +15,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+@CrossOrigin("http://localhost:4200/")
 @RestController
 @AllArgsConstructor
 @Slf4j
 @RequestMapping("/portfolio")
 public class PortfolioResController {
     IPortfolioService portfolioService;
+
     @GetMapping("/get-all-portfolios")
     public List<Portfolio> getAllPortfolio(){
         List<Portfolio> listAllPortfolios = portfolioService.getAllPortfolio();
@@ -46,9 +47,7 @@ public class PortfolioResController {
         Portfolio portfolio = portfolioService.modifyPortfolio(b);
         return portfolio ;
     }
-
-
-
+    @CrossOrigin("http://localhost:4200/")
     @PostMapping("/add-portfolio-fromAPI")
     public ResponseEntity<String> addPortfolioFromAPI() {
         try {
@@ -65,31 +64,6 @@ public class PortfolioResController {
         }
     }
 
-
-//    @GetMapping("/get-clustred-portfolios")
-//    public List<Map<Long, List<Portfolio>>> getPortfolioByCluster() {
-//        List<Map<Long, Portfolio>> listAllPortfolios = portfolioService.getPortfolioByCluster();
-//        log.info("the result is " + listAllPortfolios);
-//        List<Map<Long, List<Portfolio>>> result = new ArrayList<>();
-//
-//        // Group portfolios by cluster label
-//        Map<String, List<Portfolio>> groupedPortfolios = new HashMap<>();
-//        for (Map<Long, Portfolio> portfolioMap : listAllPortfolios) {
-//            for (Map.Entry<Long, Portfolio> entry : portfolioMap.entrySet()) {
-//               String clusterLabel = String.valueOf(entry.getKey());
-//                Portfolio portfolio = entry.getValue();
-//                groupedPortfolios.computeIfAbsent(clusterLabel, k -> new ArrayList<>()).add(portfolio);
-//            }
-//        }
-//
-//        for (Map.Entry<String, List<Portfolio>> entry : groupedPortfolios.entrySet()) {
-//            Map<Long, List<Portfolio>> clusterMap = new HashMap<>();
-//            Long clusterLabel = Long.valueOf(entry.getKey()); // Parse the String key to Long
-//            clusterMap.put(clusterLabel, entry.getValue());
-//            result.add(clusterMap);
-//        }
-//        return result;
-//    }
 @GetMapping("/get-clustred-portfolios")
   public List<Map<Long, Portfolio>> getPortfolioByCluster() {
     List<Map<Long, Portfolio>> listAllPortfolios = portfolioService.getPortfolioByCluster();

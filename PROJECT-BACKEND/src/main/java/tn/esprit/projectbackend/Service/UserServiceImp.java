@@ -15,7 +15,7 @@ public class UserServiceImp implements IUserService{
     UserRepository userRepository;
     public User addUser(User u){
         return userRepository.save(u);
-    };
+    }
     public List<User> getAllUser(){
         return userRepository.findAll();
     }

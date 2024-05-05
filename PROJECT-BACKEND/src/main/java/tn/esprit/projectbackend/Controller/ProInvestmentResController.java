@@ -1,7 +1,6 @@
 package tn.esprit.projectbackend.Controller;
 
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -10,9 +9,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.projectbackend.Entity.PortfolioInvestment;
-import tn.esprit.projectbackend.Entity.User;
-import tn.esprit.projectbackend.Service.PortfolioInvestmentServiceImp;
-import tn.esprit.projectbackend.Service.UserServiceImp;
+import tn.esprit.projectbackend.Service.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,9 +18,13 @@ import java.util.Map;
 @RestController
 @AllArgsConstructor
 @Slf4j
-public class PortfolioInvestmentResController {
-    PortfolioInvestmentServiceImp portfolioInvestmentServiceImp;
+@RequestMapping("/ProInvestment")
+public class ProInvestmentResController {
+    IProInvestment proInvestment;
+
+    PorInvesmentImp porInvesmentImp;
     UserServiceImp userService;
+
     @PostMapping("/add-portfolio-Investment/{user-id}/{portfolio-id}")
     public ResponseEntity<String> addPortfolio(@Valid @RequestBody PortfolioInvestment p,
                                                @PathVariable("user-id") Long userId,
@@ -35,14 +36,14 @@ public class PortfolioInvestmentResController {
             if (p.getStopLoss() >= p.getTakeProfit()) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Stop Loss cannot be greater or equals than Take Profit for a buy order.");
             } else {
-                portfolioInvestmentServiceImp.addPortfolioInvestment(p, userId,portfolioId);
+                porInvesmentImp.addPortfolioInvestment(p, userId,portfolioId);
                 return ResponseEntity.ok("Portfolio investment added successfully.");
             }
         } else if (p.getOrderType().toString().equals("sell")) {
             if (p.getStopLoss() <= p.getTakeProfit()) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Stop Loss cannot be less or equals than Take Profit for a sell order.");
             } else {
-                portfolioInvestmentServiceImp.addPortfolioInvestment(p, userId,portfolioId);
+                porInvesmentImp.addPortfolioInvestment(p, userId,portfolioId);
                 return ResponseEntity.ok("Portfolio investment added successfully.");
             }
         } else {
@@ -64,14 +65,10 @@ public class PortfolioInvestmentResController {
     }
     @DeleteMapping("/closeorder/{order-id}")
     public void  removeProject(@PathVariable("order-id") Long orderId){
-        portfolioInvestmentServiceImp.closeOrder(orderId);
+        porInvesmentImp.closeOrder(orderId);
     }
-//    @RequestMapping("/send-email")
-//    public  String sentEmailTest(){
-//        List<User> users = userService.getAllUser();
-//        portfolioInvestmentServiceImp.sendEmail("essefi.radhwen@esprit.tn", "email testing", "let's test");
-//
-//        return "Email test sent Successfuluy";
-//    }
-
+    @GetMapping("/get-all-portfolioInvesment")
+    public List<PortfolioInvestment> getAllInvestment() {
+        return proInvestment.getAllInvestment();
+    }
 }

@@ -10,6 +10,8 @@ import { egretAnimations } from "../../../shared/animations/egret-animations";
 import { MatTableDataSource as MatTableDataSource } from '@angular/material/table';
 import { MatPaginator as MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { PortfolioService } from 'app/views/Portfolio-Service/portfolio.Service';
+import { Inject } from '@angular/core';
 
 @Component({
   selector: 'app-crud-ngx-table',
@@ -23,17 +25,21 @@ export class CrudNgxTableComponent implements OnInit, OnDestroy {
   public dataSource: any;
   public displayedColumns: any;
   public getItemSub: Subscription;
+  data: any;
   constructor(
     private dialog: MatDialog,
     private snack: MatSnackBar,
     private crudService: CrudService,
     private confirmService: AppConfirmService,
-    private loader: AppLoaderService
+    private loader: AppLoaderService,
+    @Inject(PortfolioService) private portfolioService: PortfolioService
+
   ) { }
 
   ngOnInit() {
     this.displayedColumns = this.getDisplayedColumns();
     this.getItems()
+
   }
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -44,9 +50,11 @@ export class CrudNgxTableComponent implements OnInit, OnDestroy {
       this.getItemSub.unsubscribe()
     }
   }
+//i want to change the displayed columns to the following
 
   getDisplayedColumns() {
-    return ['name', 'age', 'balance', 'company', 'status', 'actions'];
+    //return ['name', 'age', 'balance', 'company', 'status', 'actions'];
+    return ['Symbol', 'Close','High', 'Low', 'Open', 'Volume', 'actions'];
   }
 
   getItems() {    
@@ -102,4 +110,35 @@ export class CrudNgxTableComponent implements OnInit, OnDestroy {
         }
       })
   }
+  //consume the createPortfolio from  service portfolioService 
+  createPortfolio() {
+    setTimeout(() => {
+      this.loader.open('Creating Portfolio');
+  
+      setTimeout(() => {
+        this.loader.close();
+        this.snack.open('Portfolio Created!', 'OK', { duration: 4000 });
+  
+        this.portfolioService.createPortfolio().subscribe((data: any[]) => {
+        });
+      }, 5000);
+    }, 5000);
+  }
+
+  //consume the deletePortfolio from  service portfolioService
+  deletePortfolio(id) {
+    this.confirmService.confirm({message: `Delete ${id}?`})
+      .subscribe(res => {
+        if (res) {
+          this.loader.open('Deleting Portfolio');
+          this.portfolioService.deletePortfolio(id)
+            .subscribe(data => {
+              this.loader.close();
+              this.snack.open('Portfolio deleted!', 'OK', { duration: 4000 })
+            })
+        }
+      })
+  }
+  
+
 }

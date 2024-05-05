@@ -7,7 +7,7 @@ import tn.esprit.projectbackend.Entity.User;
 
 import java.util.List;
 
-public interface PortfolioInvestmentRepository extends JpaRepository<PortfolioInvestment, Long> {
-List<PortfolioInvestment> findByUsersportfolio(User user);
-List<PortfolioInvestment> findByPortfolios(Portfolio portfolio);
+public interface ProInvestmentRepository extends JpaRepository<PortfolioInvestment,Long> {
+    List<PortfolioInvestment> findByUsersportfolio(User user);
+    List<PortfolioInvestment> findByPortfolios(Portfolio portfolio);
 }
