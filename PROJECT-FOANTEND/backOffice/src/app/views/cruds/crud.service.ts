@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
 import { UserDB } from '../../shared/inmemory-db/users';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { PortfolioService } from 'app/views/Portfolio-Service/portfolio.Service';
 import { Inject } from '@angular/core';
 import { get } from 'http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class CrudService {
@@ -16,7 +17,6 @@ export class CrudService {
     @Inject(PortfolioService) private portfolioService: PortfolioService
 
   ) {
-
   }
   getDataPortfolio(){
     this.portfolioService.getDataPortfolio().subscribe((data: any[]) => {

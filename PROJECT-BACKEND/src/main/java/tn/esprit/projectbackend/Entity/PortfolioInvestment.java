@@ -8,6 +8,10 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 @Entity
 @Getter
@@ -23,6 +27,7 @@ public class PortfolioInvestment {
     @NotNull(message = "amount cant be null")
     Long amount;
     @NotNull(message = "amount cant be null")
+    @JsonFormat(pattern = "yyyy/MM/dd")
     Date dateOfInsecription;
     @NotNull(message = "amount cant be null")
     Long takeProfit;
@@ -35,7 +40,7 @@ public class PortfolioInvestment {
     @JsonIgnore
     @ManyToOne
     User usersportfolio;
-    @JsonIgnore
+
     @ManyToOne
     Portfolio portfolios ;
 }

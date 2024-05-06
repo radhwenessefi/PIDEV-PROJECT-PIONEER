@@ -29,4 +29,7 @@ import { ConfigService } from './Config.service';
       deletePortfolio(id){
         return this.http.delete(this.url+"/portfolio/remove-portfolio/"+id)
       }
+      getAllInvestment(){
+        return this.http.get(this.url+"/ProInvestment/get-all-portfolioInvesment")
+      }
   }

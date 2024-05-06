@@ -6,6 +6,13 @@ import { MatTableDataSource as MatTableDataSource } from '@angular/material/tabl
 import { egretAnimations } from 'app/shared/animations/egret-animations';
 import { PortfolioService } from 'app/views/Portfolio-Service/portfolio.Service';
 import { Inject } from '@angular/core';
+import { MatDialogRef as MatDialogRef, MatDialog as MatDialog } from '@angular/material/dialog';
+import { MatSnackBar as MatSnackBar } from '@angular/material/snack-bar';
+import { AppConfirmService } from 'app/shared/services/app-confirm/app-confirm.service';
+import { AppLoaderService } from 'app/shared/services/app-loader/app-loader.service';
+import { Subscription } from 'rxjs';
+
+
 
 
 @Component({
@@ -17,31 +24,41 @@ import { Inject } from '@angular/core';
 export class MaterialTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  
+  public getItemSub: Subscription;
   displayedColumns: string[] = [];
   dataSource: any;
   data: any;
 
   constructor(private tableService: TablesService,
-    
+    private dialog: MatDialog,
+    private snack: MatSnackBar,
+   
+    private confirmService: AppConfirmService,
+    private loader: AppLoaderService,
     @Inject(PortfolioService) private portfolioService: PortfolioService
+    
+   
   
   ) { }
 
   ngOnInit() {
-    this.displayedColumns = this.tableService.getDataConf().map((c) => c.prop)
-    this.dataSource = new MatTableDataSource(this.tableService.getAll());
-    //consume the service portfolioService to get the data
-    //format the data to json
-    
-    this.portfolioService.getDataPortfolio().subscribe((data: any[]) => {
-      this.data = data;
-      console.log("the result as an array of JSON objects: ", this.data);
-    })
+    this.displayedColumns = this.getDisplayedColumns();
+    this.getItems()
+
   }
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+  }
+  getDisplayedColumns() {
+    //return ['name', 'age', 'balance', 'company', 'status', 'actions'];
+    return ['Symbol', 'OrderType','Amount', 'TakeProfit', 'StopLoss', 'Date', 'actions'];
+  }
+  getItems() {    
+    this.getItemSub = this.tableService.getItems()
+      .subscribe(data => {
+        this.dataSource = new MatTableDataSource(data);
+      })
   }
 
 }
