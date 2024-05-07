@@ -26,6 +26,7 @@ export class CrudNgxTableComponent implements OnInit, OnDestroy {
   public displayedColumns: any;
   public getItemSub: Subscription;
   data: any;
+  portfolioID: any;
   constructor(
     private dialog: MatDialog,
     private snack: MatSnackBar,
@@ -54,7 +55,7 @@ export class CrudNgxTableComponent implements OnInit, OnDestroy {
 
   getDisplayedColumns() {
     //return ['name', 'age', 'balance', 'company', 'status', 'actions'];
-    return ['Symbol', 'Close','High', 'Low', 'Open', 'Volume', 'actions'];
+    return ['Symbol', 'Close','High', 'Low', 'Open', 'Volume', 'actions', 'invest'];
   }
 
   getItems() {    
@@ -64,36 +65,29 @@ export class CrudNgxTableComponent implements OnInit, OnDestroy {
       })
   }
 
-  openPopUp(data: any = {}, isNew?) {
-    let title = isNew ? 'Add new Customer' : 'Update Customer';
+  openPopUp(data: any = {}) {
+    
     let dialogRef: MatDialogRef<any> = this.dialog.open(NgxTablePopupComponent, {
       width: '720px',
       disableClose: true,
-      data: { title: title, payload: data }
+      data: { payload: data, portfolioID: data }
+
     })
+    this.portfolioID = data;
+    console.log("the is of the portfolio is ",this.portfolioID)
     dialogRef.afterClosed()
       .subscribe(res => {
         if(!res) {
           // If user press cancel
           return;
         }
-        if (isNew) {
           this.loader.open('Adding new Customer');
           this.crudService.addItem(res)
             .subscribe(data => {
               this.dataSource = data;
               this.loader.close();
-              this.snack.open('Customer Added!', 'OK', { duration: 4000 })
+              this.snack.open('New Order Added!', 'OK', { duration: 4000 })
             })
-        } else {
-          this.loader.open('Updating Customer');
-          this.crudService.updateItem(data._id, res)
-            .subscribe(data => {
-              this.dataSource = data;
-              this.loader.close();
-              this.snack.open('Customer Updated!', 'OK', { duration: 4000 })
-            })
-        }
       })
   }
   deleteItem(row) {
@@ -109,6 +103,7 @@ export class CrudNgxTableComponent implements OnInit, OnDestroy {
             })
         }
       })
+      this.ngOnInit();
   }
   //consume the createPortfolio from  service portfolioService 
   createPortfolio() {

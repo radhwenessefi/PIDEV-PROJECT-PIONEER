@@ -25,10 +25,10 @@ public class ProInvestmentResController {
     PorInvesmentImp porInvesmentImp;
     UserServiceImp userService;
 
-    @PostMapping("/add-portfolio-Investment/{user-id}/{portfolio-id}")
+    @PostMapping("/add-portfolio-Investment/{userid}/{portfolioid}")
     public ResponseEntity<String> addPortfolio(@Valid @RequestBody PortfolioInvestment p,
-                                               @PathVariable("user-id") Long userId,
-                                               @PathVariable("portfolio-id") Long portfolioId)
+                                               @PathVariable("userid") Long userId,
+                                               @PathVariable("portfolioid") Long portfolioId)
     {
         log.info("The order is " + p.getOrderType());
 

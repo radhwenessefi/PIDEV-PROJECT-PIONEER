@@ -8,6 +8,7 @@ import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms
 })
 export class NgxTablePopupComponent implements OnInit {
   public itemForm: UntypedFormGroup;
+  //portfolioID: any;
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogRef: MatDialogRef<NgxTablePopupComponent>,
@@ -16,21 +17,24 @@ export class NgxTablePopupComponent implements OnInit {
 
   ngOnInit() {
     this.buildItemForm(this.data.payload)
+    const portfolioID = this.data.portfolioID
+    const portfolioid = this.data.portfolioID
+    const userid = 1
+    console.log("the data iiiiiiiiiiid: ", this.data.portfolioID)
+  
   }
   buildItemForm(item) {
     this.itemForm = this.fb.group({
-      name: [item.name || '', Validators.required],
-      age: [item.age || ''],
-      email: [item.email || ''],
-      company: [item.company || ''],
-      phone: [item.phone || ''],
-      address: [item.address || ''],
-      balance: [item.balance || ''],
-      isActive: [item.isActive || false]
-    })
+      amount: [item.amount || ''],
+      takeProfit: [item.takeProfit || ''],
+      StopLoss: [item.StopLoss || ''],
+      orderType: [item.orderType  || ''],
+    });
   }
+  
 
   submit() {
-    this.dialogRef.close(this.itemForm.value)
+    console.log("the item form iiis: ", this.itemForm);
+    //this.dialogRef.close(this.itemForm.value)
   }
 }

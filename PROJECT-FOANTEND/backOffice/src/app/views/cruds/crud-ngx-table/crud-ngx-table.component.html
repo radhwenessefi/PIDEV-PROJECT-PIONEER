@@ -47,6 +47,15 @@
           </button>
         </mat-cell>
       </ng-container>
+      <ng-container matColumnDef="invest">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> invest</mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button mat-icon-button mat-sm-button color="primary" (click)="openPopUp(row.idPortfolio)">
+            <mat-icon>trending_up</mat-icon> <!-- Use 'trending_up' icon for investment -->
+          </button>
+        </mat-cell>
+        
+      </ng-container>
 
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
