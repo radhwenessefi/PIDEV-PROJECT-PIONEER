@@ -52,7 +52,7 @@ export class MaterialTableComponent implements OnInit {
   }
   getDisplayedColumns() {
     //return ['name', 'age', 'balance', 'company', 'status', 'actions'];
-    return ['Symbol', 'OrderType','Amount', 'TakeProfit', 'StopLoss', 'Date', 'actions'];
+    return ['Symbol', 'OrderType','Amount', 'TakeProfit', 'StopLoss', 'Date', 'actions', 'prediction'];
   }
   getItems() {    
     this.getItemSub = this.tableService.getItems()
@@ -60,5 +60,20 @@ export class MaterialTableComponent implements OnInit {
         this.dataSource = new MatTableDataSource(data);
       })
   }
+    //consume the deletePortfolio from  service portfolioService
+    closeOrder(id) {
+      console.log("Close order")
+      this.confirmService.confirm({message: `Delete ${id}?`})
+        .subscribe(res => {
+          if (res) {
+            this.loader.open('Deleting Portfolio');
+            this.portfolioService.closeOrder(id)
+              .subscribe(data => {
+                this.loader.close();
+                this.snack.open('Close Order!', 'OK', { duration: 4000 })
+              })
+          }
+        })
+    }
 
 }

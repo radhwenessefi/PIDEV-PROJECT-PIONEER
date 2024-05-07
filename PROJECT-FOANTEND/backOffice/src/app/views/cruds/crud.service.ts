@@ -37,6 +37,8 @@ export class CrudService {
     this.items.unshift(item);
     return of(this.items.slice()).pipe(delay(1000));
   }
+  // consume addInvestment from PortfolioService
+
   updateItem(id, item) {
     this.items = this.items.map(i => {
       if(i._id === id) {
