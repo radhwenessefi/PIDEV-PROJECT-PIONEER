@@ -25,6 +25,7 @@ public class ProInvestmentResController {
     PorInvesmentImp porInvesmentImp;
     UserServiceImp userService;
 
+    @CrossOrigin("http://localhost:4200/")
     @PostMapping("/add-portfolio-Investment/{userid}/{portfolioid}")
     public ResponseEntity<String> addPortfolio(@Valid @RequestBody PortfolioInvestment p,
                                                @PathVariable("userid") Long userId,

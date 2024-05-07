@@ -32,7 +32,8 @@ import { ConfigService } from './Config.service';
       getAllInvestment(){
         return this.http.get(this.url+"/ProInvestment/get-all-portfolioInvesment")
       }
-      addInvestment(data){
-        return this.http.post(this.url+"/ProInvestment/add-portfolioInvesment",data,portfolioid,userid)
-      }
+      addInvestment(data, userId, portfolioId){
+        return this.http.post(this.url+"/ProInvestment/add-portfolio-Investment/" + userId + "/" + portfolioId, data);
+    }
+    
   }
