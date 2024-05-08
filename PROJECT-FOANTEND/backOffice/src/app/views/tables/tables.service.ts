@@ -17,29 +17,6 @@ export class TablesService {
   ) { }
   getDataConf() {
     return [
-      {
-        prop: 'id'
-      },
-      {
-        prop: 'age',
-        name: 'Age'
-      },
-      {
-        prop: 'name',
-        name: 'Name'
-      },
-      {
-        prop: 'gender',
-        name: 'Gender'
-      },
-      {
-        prop: 'company',
-        name: 'Company'
-      },
-      {
-        prop: 'email',
-        name: 'Email'
-      }
     ];
   }
   getAllPortfolioInvestment(){

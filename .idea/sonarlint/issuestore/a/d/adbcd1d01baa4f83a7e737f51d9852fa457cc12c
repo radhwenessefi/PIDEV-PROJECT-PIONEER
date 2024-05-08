@@ -12,5 +12,9 @@ r
 java:S3655M"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ÀÁ¹§ÿÿÿÿÿ8½œ¦¼õ1
 X	java:S125""<This block of commented-out lines of code should be removed.(øðäü8Øœ¦¼õ1
 X	java:S125]"<This block of commented-out lines of code should be removed.(ýòê®8ãœ¦¼õ1
+l
+java:S1128"ORemove this unused import 'org.springframework.beans.factory.annotation.Value'.(ìø›8øñÁõ1
 ;
 java:S1128"Remove this duplicated import.(´‘¨™8äœ¦¼õ1
+f
+java:S1128"DRemove this unused import 'tn.esprit.projectbackend.Entity.Pridect'.(û¢ÜÂûÿÿÿÿ8øñÁõ1

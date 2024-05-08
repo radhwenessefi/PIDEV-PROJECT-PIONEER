@@ -66,12 +66,10 @@ export class CrudNgxTableComponent implements OnInit, OnDestroy {
   }
 
   openPopUp(data: any = {}) {
-    
     let dialogRef: MatDialogRef<any> = this.dialog.open(NgxTablePopupComponent, {
       width: '720px',
       disableClose: true,
       data: { payload: data, portfolioID: data }
-
     })
     this.portfolioID = data;
     console.log("the is of the portfolio is ",this.portfolioID)

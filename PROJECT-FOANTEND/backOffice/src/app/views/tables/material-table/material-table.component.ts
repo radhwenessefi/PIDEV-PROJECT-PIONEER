@@ -11,6 +11,7 @@ import { MatSnackBar as MatSnackBar } from '@angular/material/snack-bar';
 import { AppConfirmService } from 'app/shared/services/app-confirm/app-confirm.service';
 import { AppLoaderService } from 'app/shared/services/app-loader/app-loader.service';
 import { Subscription } from 'rxjs';
+import { PredictionPopupComponent } from './prediction-popup/prediction-popup.component';
 
 
 
@@ -28,6 +29,7 @@ export class MaterialTableComponent implements OnInit {
   displayedColumns: string[] = [];
   dataSource: any;
   data: any;
+  predictionValue: any;
 
   constructor(private tableService: TablesService,
     private dialog: MatDialog,
@@ -74,6 +76,34 @@ export class MaterialTableComponent implements OnInit {
               })
           }
         })
+    }
+    openPopUp(data: any = {},row : any) {
+      let dialogRef: MatDialogRef<any> = this.dialog.open(PredictionPopupComponent, {
+        width: '720px',
+        disableClose: true,
+        data: {predictionValue : data, row: row}
+      })
+      
+   
+      dialogRef.afterClosed()
+        .subscribe(res => {
+          if(!res) {
+            // If user press cancel
+            return;
+          }
+
+        })
+    }
+    getPrediction(row) { 
+      console.log("the data is: ", row.portfolios.idPortfolio)
+      let id = row.portfolios.idPortfolio;
+      this.portfolioService.getPrediction(id)
+        .subscribe(data => {
+          this.predictionValue = data;
+          this.openPopUp(this.predictionValue,row)
+        })
+        console.log("the result as an array of JSON objects: ", this.predictionValue);
+       
     }
 
 }

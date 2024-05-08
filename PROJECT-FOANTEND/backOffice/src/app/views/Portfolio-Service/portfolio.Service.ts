@@ -38,4 +38,7 @@ import { ConfigService } from './Config.service';
     closeOrder(id){ 
         return this.http.delete(this.url+"/ProInvestment/closeorder/"+id)
     }
+    getPrediction(id){
+        return this.http.post(this.url+"/portfolio/get-prediction-portfolios/"+id,null)
+    }
   }
