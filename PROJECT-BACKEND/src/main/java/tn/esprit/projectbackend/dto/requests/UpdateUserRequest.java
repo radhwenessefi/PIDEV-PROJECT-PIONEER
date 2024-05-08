@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import tn.esprit.projectbackend.Entity.enumerations.Role;
 
 @Data
 @Builder
@@ -15,4 +16,5 @@ public class UpdateUserRequest {
     private String lastname ;
     private String email ;
     private String password ;
+    private Role role ;
 }

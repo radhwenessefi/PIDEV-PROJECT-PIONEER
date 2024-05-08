@@ -35,6 +35,7 @@ public class UserServiceImp implements UserService{
         if(updatedUser.getFirstname() != null) currentUser.setFirstname(updatedUser.getFirstname())  ;
         if(updatedUser.getLastname() != null) currentUser.setLastname(updatedUser.getLastname());
         if(updatedUser.getEmail() != null) currentUser.setEmail(updatedUser.getEmail());
+        if(updatedUser.getRole() != null) currentUser.setRole(updatedUser.getRole());
         if(updatedUser.getPassword() != null) currentUser.setPassword(updatedUser.getPassword());
 
         userRepository.save(currentUser) ;
@@ -50,7 +51,7 @@ public class UserServiceImp implements UserService{
     @Override
     public String currentUploadDirectory( Principal connectedUser) {
         User current = getCurrentUser(connectedUser) ;
-       return  "src/main/resources/user_images/"  + current.getId() + current.getFirstname() ;
+        return  "src/main/resources/user_images/"  + "user" +current.getId()  ;
     }
     @Override
     public void addProfileImage(MultipartFile imageFile, Principal connectedUser) throws IOException {
@@ -72,7 +73,7 @@ public class UserServiceImp implements UserService{
     @Override
     public byte[] getProfileImage(Principal connectedUser) throws IOException {
         String uploadDirectory = currentUploadDirectory(connectedUser) ;
-       String currentUserImageName = getCurrentUser(connectedUser).getImageName() ;
+        String currentUserImageName = getCurrentUser(connectedUser).getImageName() ;
         Path imagePath = Path.of(uploadDirectory, currentUserImageName);
 
         if (Files.exists(imagePath)) {

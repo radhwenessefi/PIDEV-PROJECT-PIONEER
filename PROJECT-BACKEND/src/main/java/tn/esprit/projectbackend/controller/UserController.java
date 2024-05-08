@@ -37,7 +37,7 @@ public class UserController {
         }catch(Exception e) {
             return ResponseEntity.badRequest().body(new MessageResponse(e.getMessage())) ;
         }
-        return ResponseEntity.ok().body("User updated successfully !") ;
+        return ResponseEntity.ok().body( new MessageResponse("User updated successfully !")) ;
     }
 
     @DeleteMapping("/current")
@@ -65,7 +65,7 @@ public class UserController {
     public ResponseEntity<?> getProfileImage( Principal connectedUser) {
         byte[] responseBody ;
         try {
-           responseBody = userService.getProfileImage(connectedUser) ;
+            responseBody = userService.getProfileImage(connectedUser) ;
         }catch(Exception e) {
             return ResponseEntity.badRequest().body(new MessageResponse(e.getMessage())) ;
         }
@@ -82,7 +82,7 @@ public class UserController {
             e.printStackTrace();
             return ResponseEntity.badRequest().body(new MessageResponse(e.getMessage())) ;
         }
-        return ResponseEntity.ok().body("profile image updated successfully !") ;
+        return ResponseEntity.ok().body(new MessageResponse("profile image updated successfully !")) ;
     }
 
 
