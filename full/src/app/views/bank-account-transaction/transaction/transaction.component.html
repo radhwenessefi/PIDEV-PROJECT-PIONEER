@@ -1,0 +1,42 @@
+<mat-card class="p-0">
+    <mat-card-title class="">
+        <div class="card-title-text pl-4 rtl:pr-4 py-3">Create A new Bank Account</div>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content class="!pt-4">
+        <form [formGroup]="TransactionForm">
+            <!--  -->
+            <div class="flex flex-wrap">
+                <div class="w-full">
+                    <div class="!pb-4">
+                        <mat-form-field class="full-width">
+                            <input
+                            matInput
+                            name="amount"
+                            formControlName="amount"
+                            placeholder="amount"
+                            >
+                        </mat-form-field>
+                    </div>
+                    <div class="!pb-4">
+                        <mat-form-field class="full-width">
+                            <input
+                            matInput
+                            name="senderId"
+                            formControlName="senderId"
+                            placeholder="Sender RIB"
+                            >
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <button 
+            mat-raised-button 
+            color="primary" 
+            (click)="submit()"
+            [disabled]="TransactionForm.invalid"
+            >Submit</button>
+        </form>
+    </mat-card-content>
+</mat-card>
+

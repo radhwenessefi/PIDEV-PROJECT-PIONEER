@@ -1,0 +1,124 @@
+<mat-card class="p-0">
+    <mat-card-title class="">
+        <div class="card-title-text pl-4 rtl:pr-4 py-3">Create A new Bank Account</div>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content class="!pt-4">
+        <form [formGroup]="AddBankAccountFormGroup">
+            <!--  -->
+            <div class="flex flex-wrap">
+                <div class="w-full md:w-1/2 md:pr-6">
+                    <div class="!pb-4">
+                        <mat-form-field class="full-width">
+                            <input
+                            matInput
+                            name="Bank Account"
+                            formControlName="accountNumber"
+                            placeholder="BankAccountNumber (Min Length: 4, Max Length: 9)"
+                            >
+                            <mat-error *ngIf="AddBankAccountFormGroup.get('accountNumber').invalid && AddBankAccountFormGroup.get('accountNumber').touched">
+                                Account Number is required.
+                            </mat-error>    
+                        </mat-form-field>
+                    </div>
+
+                    <div class="!pb-4">
+                        <mat-form-field class="full-width">
+                            <input
+                            matInput
+                            name="rib"
+                            placeholder="RIB"
+                            formControlName="rib"
+                            >
+                            <mat-error *ngIf="AddBankAccountFormGroup.get('rib').invalid && AddBankAccountFormGroup.get('rib').touched">
+                                RIB is required.
+                            </mat-error>    
+
+                        </mat-form-field>
+                    </div>
+
+                    <div class="!pb-4">
+                        <mat-form-field class="full-width">
+                        <input
+                            matInput
+                            type="number"
+                            name="balance"
+                            placeholder="balance"
+                            formControlName="balance"
+                            >
+                            <mat-error *ngIf="AddBankAccountFormGroup.get('balance').invalid && AddBankAccountFormGroup.get('balance').touched">
+                                balance is required.
+                            </mat-error>    
+
+                        </mat-form-field>
+                    </div>
+                    <div class="!pb-4">
+                        <mat-form-field class="full-width">
+                            <input 
+                            matInput
+                            name="modifyDate"
+                            placeholder="modifyDate"
+                            formControlName="modifyDate" 
+                            [matDatepicker]="modifyDateDatepicker">
+                            
+                            <mat-datepicker-toggle matSuffix [for]="modifyDateDatepicker"></mat-datepicker-toggle>
+                        </mat-form-field>
+                        <mat-error *ngIf="AddBankAccountFormGroup.get('modifyDate').invalid && AddBankAccountFormGroup.get('modifyDate').touched">
+                            modifyDate is required.
+                        </mat-error>    
+
+                        <mat-datepicker #modifyDateDatepicker></mat-datepicker>
+                    </div>
+                </div>
+
+                
+                    <div class="w-full md:w-1/2">
+                            <div class="!pb-4">
+                                <mat-form-field class="full-width">
+                                    <input 
+                                    matInput
+                                    name="currency"
+                                    formControlName="currency" 
+                                    placeholder="currency">
+                                </mat-form-field>
+                                <mat-error *ngIf="AddBankAccountFormGroup.get('currency').invalid && AddBankAccountFormGroup.get('currency').touched">
+                                    currency is required.
+                                </mat-error>    
+        
+                            </div>
+                    
+                            <div class="!pb-4">
+                                <mat-form-field class="full-width">
+                                    <mat-label>account Type</mat-label>
+                                    <mat-select placeholder="accountType" formControlName="accountType">
+                                    <mat-option *ngFor="let accountType of accountTypes" [value]="accountType">
+                                    @if(accountType === 'SAVINGS_ACCOUNT'){
+                                        Savings
+                                    }
+                                    @else if (accountType === 'DEMAND_DEPOSIT_ACCOUNT') {
+                                        Deposit Account 
+                                    }
+                                    </mat-option>
+                                    </mat-select>
+                                    <mat-error *ngIf="AddBankAccountFormGroup.get('accountType').invalid && AddBankAccountFormGroup.get('accountType').touched">
+                                        account Type is required.
+                                    </mat-error>    
+    
+                                </mat-form-field>
+                            </div>
+    
+                    
+                        </div>
+
+
+            </div>
+            <button 
+            mat-raised-button 
+            color="primary" 
+            (click)="submit()"
+            [disabled]="AddBankAccountFormGroup.invalid"
+            >Submit</button>
+        </form>
+    </mat-card-content>
+</mat-card>
+
