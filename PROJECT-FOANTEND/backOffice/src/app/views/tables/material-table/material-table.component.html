@@ -39,10 +39,18 @@
         <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color"> {{row.dateOfInsecription}} </mat-cell>
       </ng-container>
       <ng-container matColumnDef="actions">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Action </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Close Order</mat-header-cell>
         <mat-cell *matCellDef="let row">
-          <button mat-icon-button mat-sm-button color="warn" (click)="deletePortfolio(row.idPortfolio)">
+          <button mat-icon-button mat-sm-button color="warn" (click)="closeOrder(row.idPortfolioInvestement)">
             <mat-icon>close</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="prediction">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Prediction</mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button mat-icon-button mat-sm-button color="primary" >
+            <mat-icon>preview</mat-icon>
           </button>
         </mat-cell>
       </ng-container>

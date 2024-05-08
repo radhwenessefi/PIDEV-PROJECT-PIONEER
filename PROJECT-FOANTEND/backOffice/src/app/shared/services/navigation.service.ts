@@ -67,9 +67,9 @@ export class NavigationService {
       type: 'dropDown',
       icon: 'list',
       sub: [
-        {name: 'Basic Table', state: 'tables/mat-table'},
-        {name: 'CRUD Table', state: 'cruds/ngx-table'},
-        {name: 'Table variations', state: 'material/table'}
+        {name: 'Investment', state: 'tables/mat-table'},
+        {name: 'Portfolios', state: 'cruds/ngx-table'},
+        
       ]
     },
 

@@ -69,10 +69,10 @@ public class PortfolioResController {
     List<Map<Long, Portfolio>> listAllPortfolios = portfolioService.getPortfolioByCluster();
     return listAllPortfolios;
 }
-    @PostMapping("/get-prediction-portfolios")
-    public Float pridectionPortFolio(@RequestBody Pridect p){
-        log.info("test"+p);
-        Float pridiction = portfolioService.predictionForVolume(p);
+    @PostMapping("/get-prediction-portfolios/{portfolio-id}")
+    public Float pridectionPortFolio(@PathVariable("portfolio-id") Long blId){
+        log.info("test"+blId);
+        Float pridiction = portfolioService.predictionForVolume(blId);
         return pridiction;
     }
 }

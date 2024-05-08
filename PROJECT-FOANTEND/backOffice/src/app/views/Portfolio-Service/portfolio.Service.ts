@@ -35,5 +35,7 @@ import { ConfigService } from './Config.service';
       addInvestment(data, userId, portfolioId){
         return this.http.post(this.url+"/ProInvestment/add-portfolio-Investment/" + userId + "/" + portfolioId, data);
     }
-    
+    closeOrder(id){ 
+        return this.http.delete(this.url+"/ProInvestment/closeorder/"+id)
+    }
   }

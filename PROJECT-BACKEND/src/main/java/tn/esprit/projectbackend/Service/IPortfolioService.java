@@ -15,5 +15,5 @@ public interface IPortfolioService {
     public  Portfolio modifyPortfolio(Portfolio portfolio);
     public List<Portfolio> fetchDataFromApi();
     public List<Map<Long,Portfolio>> getPortfolioByCluster();
-    public Float predictionForVolume(Pridect p);
+    public Float predictionForVolume(Long pid);
 }

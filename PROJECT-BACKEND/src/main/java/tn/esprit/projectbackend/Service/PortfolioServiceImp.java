@@ -72,32 +72,27 @@ public class PortfolioServiceImp implements IPortfolioService {
     }
 
 
-    public Float predictionForVolume(Pridect p) {
+    public Float predictionForVolume(Long pid) {
         try {
+            Portfolio p = portfolioRepository.findById(pid).get();
             // Convert Pridect object to JSON string with desired format
             String requestBodyJson = String.format("{\"Open\": %s, \"High\": %s, \"Low\": %s, \"Close\": %s, \"Adj_close\": %s}",
-                    p.getOpen(), p.getHigh(), p.getLow(), p.getClose(), p.getAdj_close());
-
+                    p.getOpen(), p.getHigh(), p.getLow(), p.getClose(), p.getAdjClose());
             // Log the JSON request body
             logger.info("Request body: {}", requestBodyJson);
-
             // Set headers
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
             HttpEntity<String> requestEntity = new HttpEntity<>(requestBodyJson, headers);
-
             // Make the API call with the JSON request body
             ResponseEntity<String> rawResponseEntity = restTemplate.postForEntity(apiTest1, requestEntity, String.class);
             String rawResponse = rawResponseEntity.getBody();
-
             // Log the API response
             logger.info("Raw API response: {}", rawResponse);
-
             // Extract the float value from the response
             //Float rawResponseValue = Float.parseFloat(rawResponse.substring(2, rawResponse.length() - 2));
             String numericPart = rawResponse.substring(3, rawResponse.length() - 4); // Adjust the substring indices
-
-// Parse the numeric part as a float
+            //Parse the numeric part as a float
             float rawResponseValue = Float.parseFloat(numericPart);
             return rawResponseValue;
         } catch (Exception e) {

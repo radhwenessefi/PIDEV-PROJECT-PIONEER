@@ -26,7 +26,7 @@ public class PortfolioInvestment {
     Long idPortfolioInvestement;
     @NotNull(message = "amount cant be null")
     Long amount;
-    //@NotNull(message = "amount cant be null")
+    @NotNull(message = "amount cant be null")
     @JsonFormat(pattern = "yyyy-MM-dd")
     Date dateOfInsecription;
     @NotNull(message = "amount cant be null")
