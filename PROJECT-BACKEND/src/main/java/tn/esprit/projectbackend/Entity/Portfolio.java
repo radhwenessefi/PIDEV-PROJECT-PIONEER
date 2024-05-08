@@ -40,5 +40,4 @@ public class Portfolio {
     @OneToMany(cascade = CascadeType.ALL, mappedBy="portfolios")
     @JsonIgnore
     private Set<PortfolioInvestment> portfolioInvestments;
-
 }

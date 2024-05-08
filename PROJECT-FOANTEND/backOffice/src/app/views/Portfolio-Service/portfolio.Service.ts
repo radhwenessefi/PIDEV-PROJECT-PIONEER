@@ -38,5 +38,4 @@ import { ConfigService } from './Config.service';
     closeOrder(id){ 
         return this.http.delete(this.url+"/ProInvestment/closeorder/"+id)
     }
-    
   }
