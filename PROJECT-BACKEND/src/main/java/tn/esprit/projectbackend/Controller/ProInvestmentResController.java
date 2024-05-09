@@ -38,7 +38,7 @@ public class ProInvestmentResController {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Stop Loss cannot be greater or equals than Take Profit for a buy order.");
             } else {
                 porInvesmentImp.addPortfolioInvestment(p, userId,portfolioId);
-                return ResponseEntity.ok("Portfolio investment added successfully.");
+                return ResponseEntity.status(HttpStatus.OK).body("Portfolio investment added successfully.");
             }
         } else if (p.getOrderType().toString().equals("sell")) {
             if (p.getStopLoss() <= p.getTakeProfit()) {
